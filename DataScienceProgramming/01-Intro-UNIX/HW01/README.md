@@ -1,17 +1,52 @@
 # Assignment HW01
 ## Instructions
 
-**Please following the instructions precisely!**
+**Please follow the instructions precisely!**
 
-For this assignemt, you will use the files in /home/data/20\_newsgroup/. DO NOT COPY the files to your home directory. You may (1) pass the file path to your script, (2) cd into the directory, or (3) (if you are experienced using UNIX) create soft links to the files in your home directory.
+The goal of this homework is to familiarize you with the UNIX command line and to practice some basic commands that will be useful to your work in this class. To submit this homework, place all scripts and files in the DataScienceProgramming/01-Intro-UNIX/HW01 directory on the cluster by 11:55 PM on Mon 8/28/2017. Your homework will be collected precisely at midnight (using a shell script, of course!) If you have any questions about submitting the homework, please email the course instructors BEFORE THE DUE DATE.
 
-1. Write a shell script called "QUESTION1.sh" that takes as its single input a full path directory name, and displays a list of 10 file names corresponding to the ten longest documents in that directory (sort by line count), along with line and word counts. Each line of the output should look something like this:
+To run your script, you may need to change the file permissions it has. You have to say that the script is allowed to execute code on your system. To do this, run "chmod +x [your filename]" in the directory where your file is located. For example, run "chmod +x question1.sh". You can get more information about the chmod command by running "man chmod".
 
-    - Syllabus-MSA8010-F17.tex 445 LINES 3930 WORDS
+There are many nuances to deal with in shell scripting. We avoided dealing with most of the complexity in our brief introduction, but for those interested, you may find the following quick overview helpful: https://www.panix.com/~elflord/unix/bash-tute.html.
 
-2. Write a shell script called QUESTION2.sh to list the ten most common words in each topic (topics correspond to directories in /home/data/20\_newsgroup), ordered by frequency. Exclude the stop words ('the', 'a', 'at', 'to', 'and', 'on', 'that', 'of', 'as', 'or', 'for') (there are others, but we will not worry about them). Include word counts in your answer. For each topic, your script should output the directory name (e.g. sci.crypt), followed by a list of 10 words with word counts.
+For this assignemt, you will use the files in /home/data/20\_newsgroup/. DO NOT COPY the files to your home directory. 
 
-3. A "bag of words" representation treats a document as just a bag of words (that is, word order does not matter). The entire corpus, or collection of documents, is used to generate a "vocabulary". The document is represented by a set of word frequencies (number of times word appears/number of words in the document). This can be used to compare how similar two documents are. Write a script called QUESTION3.sh that accepts two arguments: the first will be a directory name in /home/data/20\_newsgroup; the second will be the name of a file in that directory. Your script should 1. generate a file called (directory name)\_WORDS.txt containing all unique words in the corpus (corpus == all files in the directory in argument 1) and 2. generate a file called (document name)\_WORD\_FREQUENCIES.txt containing a list of all the words in the vocabulary, together with their frequencies in the document (you may output the frequencies in fraction form, but for extra credit, use decimal notation with 5-digit precision! HINT: Look up the "dc" command.)
+QUESTIONS:
+1. In class, we talked about how you can use the "cd" command to change to a new directory, and how you can use "ls" to list all the files in that directory. You can also call the "ls" command with a directory name to list the files in that directory. The following is an example of a shell script that displays the name of the directory "/home/data/20\_newsgroup/" and lists the files in it: <br /> <br />
+`#!/bin/bash` <br />
+`echo 'Contents of directory /home/data/20\_newsgroup/:'` <br />
+`ls /home/data/20\_newsgroup/` <br /> <br />
+Write a shell script called "question1.sh" that uses cd to change to the directory "/home/data/20\_newsgroup/" and lists the contents of the directory "sci.crypt". Display only the first 10 files in the list (hint: use the "head" command!). Use the "pwd" command in the last line of your script to verify that you have changed directories.
 
+2. The "grep" command can be used to search for a text string. Write a shell script called "question2.sh" that lists the contents of /home/data/20\_newsgroup/ (regardless of where it is called from) and uses "grep" to display the names of the directories containing "sci" in the name (these are directories containing science-related articles). Also return a count of these directories. Use the following incompete shell script as a template: <br /> <br />
+`#!/bin/bash` <br />
+`echo 'Science-related directories in /home/data/20\_newsgroup/:'` <br />
+`[your code here]` <br />
+``echo "There are `[your code here]` directories containing articles related to science."`` <br /> <br />
 
-## Submission
+3. Write a shell script called "question3.sh" by copying "question2.sh" (using cp) and adding the following line at the end (fill in the missing code too!): <br /> <br />
+``"There are `[your code here]` directories NOT containing articles related to science."``
+
+4. Another useful utility that we discussed in class was the "tr" command, which allows you to make single-character substitutions in text. In class, we did only single-character substitutions at a time; however, you can pass a set of values (or even a range) to substitute. For example, the following script (let's say it lives in a file called "myscript.py") will take text from the standard input and convert all uppercase characters to lowercase: <br /> <br /> 
+`#!/bin/bash` <br />
+`tr 'A-Z' 'a-z'` <br /> <br />
+If we pass it text from a file by calling: <br />
+`cat file.txt | ./myscript.sh` <br /> <br />
+we will get all the text from file.txt, converted to lowercase. Write a shell script called "question4.sh" that does the following: 
+   1. Extracts all lines from the input text that contain the word "water"
+   2. Converts all characters in those lines to lowercase
+   3. Makes the text "leet", by substituting all "a" with "4", "t" with "7", "i" with "1", and "e" with "3". 
+   4. Writes the modified lines to a text file called "leetlines.txt"
+   5. Displays the number of lines written to "leetlines.txt" using the command: echo "\`[your code here]\` lines written."
+I will test your scipt by calling it with: <br /> <br />
+`cat [filename] | ./question4.sh`
+
+5. Write a script called "question5a.sh" that counts the number of occurences of the STRING "sing" in the text input (capitalization should not matter). Write another script called "question5b.sh" that counts the number of occurences of WORD "sing" in the text input (again, capitalization should not matter). I will test your script by calling it with: <br /> <br />
+`cat [filename] | ./question5a.sh` <br />
+`cat [filename] | ./question5b.sh` 
+
+6. BONUS. You can write more complicated shell scripts by using arguments and variables. The character "$" is used to get the value of a variable. Try doing "echo $PATH" in the command line. This tells you the value of the system variable PATH. Arguments in your script can be accessed in the order that they were passed, using $1 for the first argument, $2 for the second, etc. For example, the following script takes 3 inputs: first name, last name, and age: <br /> <br />
+`#!/bin/bash` <br />
+``echo "Hello! My name is $1 $2, and I am $3 years old."`` <br /> <br />
+If you save the script as "myscript2.sh" and run "./myscript2.sh John Jones 26", it will output: "Hello! My name is John Jones, and I am 26 years old." <br />
+Write a script called "question6.sh" that takes a file name and a text string as its first and second arguments, respectively, and counts the number of unique occurrences of the text string in the given file. Make sure that you are counting occurrences of the word, and not just matchign lines! Case should not matter, and match whole words only (so if I call "question6.sh [filename] hat", I should get counts of the word "hat" and not of longer words that contain "hat" as a substring--for example, "that").  
