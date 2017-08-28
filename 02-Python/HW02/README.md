@@ -12,7 +12,7 @@ QUESTIONS
 
 3. A simple substitution code codes 'a' as 1, 'b' as 2, ..., 'z' as 26. Write a function called "encode" that takes in a string, and prints the coded text. The output should be a string, with letters separated by ".". Use "999" for punctuation and spaces. For example, encode("Hello!") should print out "8.5.12.12.15.999".
 
-4. The Harmonic series is the sum of 1 + 1/2 + 1/3 + 1/4 + ..... The n<sup>th</sup> Harmonic number H<sub>n</sub> is 1 + 1/2 + 1/3 + ...  + 1/n. What is the smallest Harmonic number whose value is grater than 50?
+4. The Harmonic series is the sum of 1 + 1/2 + 1/3 + 1/4 + ..... The n<sup>th</sup> Harmonic number H<sub>n</sub> is 1 + 1/2 + 1/3 + ...  + 1/n. Write a python function called "get_n" that accepts as input a threshold, and returns n corresponding to the smallest Harmonic number whose value is grater than the threshold. E.g. `get_n(3)` should output 11.
 
 5. Write a function called "describe" that takes as input a list of numbers, and prints the number of elements in the list, and the mean, variance, and standard deviation. The printed quantities should be labeled. The output should look something like: </br></br>
 `number of elements: 12` </br>
