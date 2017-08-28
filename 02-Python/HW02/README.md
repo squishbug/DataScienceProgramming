@@ -1,7 +1,8 @@
 # Assignment HW02
 ## Instructions
 **Please following the instructions precisely!**
-You may use a Jupyter notebook to complete this assignment. 
+
+To submit your assignment, write all your functions in the indicated spaces in the Jupyter notebook called "HW2_submission.ipynb" located in this directory. Run the notebook to generate .py files that will make up your submission. 
 
 QUESTIONS
 
