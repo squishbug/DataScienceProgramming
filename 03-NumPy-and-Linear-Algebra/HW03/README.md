@@ -11,9 +11,9 @@ The following questins will build on each other. Your answers should be text fil
 `3. 100, 10, 1000` </br>
 `(and so on)`
 
-1. Examine the dataset using command line arguments (head, tail, less...). Load the data into a numpy array called "cameras". How many of the cameras were manufactured after 1999 (2000 and on)?
+1. Examine the dataset using command line arguments (head, tail, less...). Load the data into a numpy array called "cameras" (you may want to check out numpy.genfromtxt). How many of the cameras were manufactured after 1999 (2000 and on)?
 
-2. Create a new array, cameras_new, containing only cameras manufactured after 1999. What is the name of the heaviest camera (weight includes batteries)?
+2. Create a new array, cameras_new, containing only cameras manufactured after 1999. What is the name of the heaviest camera in this group (weight includes batteries)?
 
 3. What is the mean price of a camera manufactured after 1999? What is the lowest price? What is the highest?
 
