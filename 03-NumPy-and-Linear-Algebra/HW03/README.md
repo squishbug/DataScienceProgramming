@@ -16,10 +16,10 @@ Next, run the script to remove model names and save the result to a new file, "C
 
 `./preprocess_data.sh Camera.csv Camera_noname.csv`
 
-Use "Camera_noname.csv" to ansewer the following questions. Put your answers in a text file called "homework.txt". If a question has multiple parts, separate the answers with commas. Its contents might look something like this (my answers are wrong!):
+Use "Camera_noname.csv" to answer the following questions. Put your answers in a text file called "homework.txt". If a question has multiple parts, separate the answers with commas. Its contents might look something like this (my answers are wrong!):
 
 `1. 5` </br>
-`2. 'Toshiba PDR-T10'` </br>
+`2. 165` </br>
 `3. 100, 10, 1000` </br>
 `(and so on)`
 
