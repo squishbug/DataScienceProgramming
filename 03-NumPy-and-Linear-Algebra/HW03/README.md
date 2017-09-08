@@ -16,22 +16,20 @@ Next, run the script to remove model names and save the result to a new file, "C
 
 `./preprocess_data.sh Camera.csv Camera_noname.csv`
 
-Use "Camera_noname.csv" to answer the following questions. Put your answers in a text file called "homework.txt". If a question has multiple parts, separate the answers with commas. Its contents might look something like this (my answers are wrong!):
+Use "Camera_noname.csv" to answer the following questions. Be sure to examine the dataset using command line arguments first!
 
-`1. 5` </br>
-`2. 165` </br>
-`3. 100, 10, 1000` </br>
-`(and so on)`
+To submit your assignment, write all your functions in the indicated spaces in the Jupyter notebook called "HW3_submission.ipynb" located in this directory. Run the notebook to generate a .py file that will make up your submission.
 
-1. Examine the dataset using command line arguments (head, tail, less...). Load the data into a numpy array called "cameras" (you may want to check out numpy.loadtxt). How many of the cameras were manufactured after 1999 (2000 and on)?
+1. Write a function called "load_data" that takes as its one argument the data file name, and returns a numpy nd-array with the data. Assume that the data file is in the same format as Camera_noname.csv (one-line header, all numeric data). You may want to check out numpy.loadtxt. NOTE: "import numpy as np" is already included in the file header. 
 
-2. What is the Model ID (first column in dataset) of the heaviest camera released after 1999 (weight includes batteries)?
+2. Write a function called "count_new" that takes as its one argument the nd-array produced in question 1 and returns the number of cameras were released after 1999 (2000 and on).
 
-3. What is the mean price of a camera manufactured after 1999? What is the lowest price in this group? What is the highest?
+3. Write a function called "get_heaviest_new" that takes as its one argument the nd-array produced in question 1 and returns the Model ID (first column in dataset) of the heaviest camera released after 1999 (weight includes batteries). (Note: data may contain "nan" values and non-physical weights--your functions should be able to handle that!)
 
-4. Examine the max resolution and release date values in "cameras". How many cameras have non realistic max resolution or release date values?
+4. Write a function called "price_summary_new" that takes as its one argument the nd-array produced in question 1 and returns the mean price of a camera released after 1999, as well as the min and max price in this group. Your output should be a tuple of (mean price after 1999, lowest price after 1999, highest price after 1999). 
 
-5. Remove the non realistic data points from "cameras". Find a linear fit y = a x + b, where x is release date and y is max resolution. What is a? What is b?
+5. It's always a good idea to examine your data and make sure that all the values make sense. Write a function called "bad_resolution" that takes as its one argument the nd-array produced in question 1 and returns the number of non-reasonable (nan or out of range) values for the max resolution. 
 
+6. (Bonus) Write a function called "resolution_fit" that takes as its one argument the nd-array produced in question 1 and returns a tuple (a, b) corresponding to the linear fit coefficients y = a x + b, where x is release date and y is max resolution (your function should ignore any non-physical values in the release date and max resolution). 
 
 ## Submission
