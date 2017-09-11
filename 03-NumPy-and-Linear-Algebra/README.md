@@ -9,4 +9,4 @@ We will use NumPy to represent vectors and matrices.
 
 ## Assignment 3:  HW03
 
-Will be posted soon!
+Due: 9/22/2017
