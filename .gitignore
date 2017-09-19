@@ -1,0 +1,17 @@
+# Data
+*.csv
+*.dat
+
+# Images
+*.jpeg
+*.jpg
+*.mp4
+*.mov
+*.png
+*.eps
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
