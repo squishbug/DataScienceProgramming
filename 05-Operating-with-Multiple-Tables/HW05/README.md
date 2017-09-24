@@ -4,7 +4,7 @@
 
 For this assignment, you will be working with the AdventureWorks dataset that we studied in class. You don't need to copy the dataset into your home directory, you can import it directly from files in the /home/data/AdventureWorks/ directory. 
 
-Please use the HW05_Submission Jupyter notebook to complete your assignment. This notebook will generate homework5.py, which will be the file submitted for grading.
+Please use the HW05_Submission Jupyter notebook to complete your assignment. This notebook will generate hw5_answers.py, which will be the file submitted for grading.
 
 The Employees, Territory, Customers, and Orders tables are the same as those we used in class.
 
