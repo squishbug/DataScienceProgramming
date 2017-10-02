@@ -14,6 +14,6 @@ The Employees, Territory, Customers, and Orders tables are the same as those we 
 
 3. Write a function called get_order_location that takes three arguments: "Orders", "Customers", and "Territory", and returns a DataFrame containing the following columns: ~~OrderID~~ "CustomerID", "Name", and "TotalItems", that gives, for each order, the ~OrderID~ CustomerID, the name of the territory where the order was placed, and the total number of items ordered (yes, 2 ski poles counts as 2 items). 
 
-4. Write a function called employee_info that takes one argument: "Employees", and returns a DataFrame containing the following columns: JobTitle, NumberOfEmployees, and MeanVacationHours, containing all job titles, the number of employees with that job title, and the mean number of vacation days for employees with that job title. 
+4. Write a function called employee_info that takes one argument: "Employees", and returns a DataFrame containing the following columns: JobTitle, NumberOfEmployees, and MeanVacationHours, containing all job titles, the number of employees with that job title, and the mean number of vacation ~~days~~ hours for employees with that job title. 
 
 ## Submission
